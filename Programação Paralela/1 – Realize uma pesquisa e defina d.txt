@@ -1,0 +1,51 @@
+1 – Realize uma pesquisa e defina diferenciando:
+• Computação Distribuída x Computação Paralela
+• Programação Distribuída x Programação Paralela
+
+Computação distribuída: Usa vários computadores diferentes ligados por uma rede para resolver uma grande tarega em conjunto 
+Computação paralela: Uso de muitos processadores em um só computador para rodar partes de um problema ao mesmo tempo.
+Programação Paralela: Foco no ganho de desempenho e velocidade de cálculo. Memória compartilhada ou barramento locais de alta velocidade.
+Programação Distribuída: Cada nó possui usa própria memória independente e os sistemas comunicam-se estritamente por troca de mensagens via rede.
+
+2 - Para cada classe de máquina definida por Flynn, realize uma pesquisa e encontre uma
+máquina real que represente a classe.
+
+As classes de arquitetura de computadores definidas pela taxonomia de Flynn são SISD, SIMD, MISD e MIMD, representadas por máquinas reais tradicionais ou paralelas.
+
+SISD: IBM Personal Computer XT (lançado em 1983)
+SIMD: Cray-1 (lançado em 1976)
+MISD: IBM AP-101 (computador do ônibus espacial lançado em 1981)
+MIMD: HPE ProLiant Gen11 (servidor multinúcleo lançado em 2022)
+
+3 – Caracterize os Processadores Vetoriais. Identifique exemplares reais de processadores
+vetoriais e identifique suas principais características.
+Processadores Vetoriais são unidades de processamento projetadas para executar operações matemáticas sobre arrays de dados(vetores/listas) em uma única instrução(abordagem SIMD).
+As características operação única, registradores vetoriais, pipelinig profundo, alto desempenho em ponto flutuante, redução de overhead.
+
+4 - Para cada classe de arquitetura de computador:
+• Processadores Vetoriais Paralelos (PVP)
+• Multiprocessadores Simétricos (SMP)
+• Máquinas Maciçamente Paralelas (MPP)
+• Máquinas com Memória Compartilhada Distribuída (DSM)
+• Redes de Estações de Trabalho (NOW)
+• Máquinas Agregadas (COW)
+encontre uma máquina real e descreva a configuração de sua arquitetura.
+
+PVP (Processadores Vetoriais Paralelos): Cray T-90Configuração: Até 32 processadores vetoriais customizados conectados a uma memória central compartilhada de alta velocidade por meio de uma matriz de comutação.
+
+SMP (Multiprocessadores Simétricos): IBM Power E1080Configuração: Até 4 soquetes interconectados contendo um total de 240 núcleos de processamento Power10, onde todos os núcleos compartilham igualmente o acesso a até 64 TB de memória RAM central.
+
+MPP (Máquinas Maciçamente Paralelas): LineShine (Supercomputador do NSCS)Configuração: 13.789.440 núcleos de processamento independentes (CPUs LX2 304C) interconectados pela rede proprietária de altíssima velocidade LingQi, funcionando com memória totalmente distribuída.
+
+DSM (Memória Compartilhada Distribuída): SGI Origin 2000Configuração: Até 512 nós interconectados pela rede CrayLink. Cada nó possui seus próprios processadores (MIPS R10000) e memória local, mas o hardware simula um espaço global único de memória compartilhada para o software.
+
+NOW (Redes de Estações de Trabalho): Cluster Berkeley NOW (Histórico)Configuração: 105 estações de trabalho de mesa Sun Ultra 170 padrão de mercado, interconectadas através de uma rede Myrinet comum para funcionar como um único supercomputador de baixo custo.
+
+COW (Máquinas Agregadas): Cluster Google Borg (Infraestrutura de Data Center)Configuração: Milhares de servidores comuns montados em racks (commodity PCs) operando com sistemas operacionais independentes, mas agregados e unificados logicamente por meio do software de orquestração Borg para rodar grandes aplicações distribuídas.
+
+5 - Escolha um dos computadores da Lista dos 500 maiores supercomputadores do mundo, TOP
+500 (www.top500.org). Descreva a arquitetura do Supercomputador escolhido, classificando-o a
+partir de uma das taxonomias estudadas em aula. Acrescente na descrição o sistema operacional,
+finalidade, país, classificação na lista e link para sua página.
+
+O supercomputador escolhido é o LineShine, que atualmente ocupa o primeiro lugar na lista mundial do TOP500. Ele está instalado na China, especificamente no Centro Nacional de Supercomputação em Shenzhen, e roda o sistema operacional Kylin OS, uma distribuição Linux chinesa. A finalidade dessa máquina é processar pesquisas científicas avançadas de alta performance, cuidando de tarefas pesadas como simulações oceânicas, engenharia de materiais, biologia computacional e treinamento de inteligência artificial. Se você quiser conferir a página oficial do sistema, o link é top500.org.Olhando para a parte técnica e classificando ele pelas taxonomias, o LineShine se encaixa como MIMD na Taxonomia de Flynn, já que tem milhões de núcleos de processamento que trabalham de forma totalmente independente, executando instruções diferentes em cima de dados diferentes ao mesmo tempo. Já na classificação de hardware paralelo, ele é uma Máquina Maciçamente Paralela, do tipo MPP. O grande diferencial da arquitetura dele é que ele é um sistema puro de CPU, ou seja, ele não usa placas de vídeo para acelerar os cálculos como a maioria dos supercomputadores atuais. Ele resolve tudo usando chips proprietários chamados LX2 de 304 núcleos baseados na arquitetura ARMv9. Esses chips já vêm com aceleradores matemáticos integrados direto no silício para agilizar os cálculos de matrizes. Para juntar essa montanha de hardware, o sistema usa uma rede de interconexão própria de altíssima velocidade chamada LingQi, que amarra todos os 13.789.440 núcleos de processamento em uma estrutura de memória puramente distribuída, combinando memória interna rápida perto dos chips com memória DDR5 externa para dar conta do recado.
